@@ -14,6 +14,7 @@ use App\Http\Controllers\PreControlController;
 use App\Http\Controllers\ProductionLineController;
 use App\Http\Controllers\QualityControlController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserRoleController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -227,3 +228,5 @@ Route::post('/reset-password', function (Request $request) {
         : back()->withErrors(['email' => [__($status)]]);
 
 })->middleware('guest')->name('password.update');
+
+Route::resource('/userroles', UserRoleController::class);

@@ -26,6 +26,11 @@
                     </a>
                 @endcan
 
+                <a class="navbar-item {{ Request::path() === 'userroles' ? 'active' : '' }}"
+                    href="{{ route('userroles.index') }}">
+                    User Roles
+                </a>
+
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link has-text-white">
                         {{__("Log")}}
